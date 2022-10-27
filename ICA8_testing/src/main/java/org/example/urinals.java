@@ -2,7 +2,7 @@ package org.example;
 
 public class urinals {
     public static void main(String[] args) {
-        String str = "01000";
+        String str = "10101";
         int ans = logic(str);
 
 
@@ -27,15 +27,14 @@ public class urinals {
         }
 
         for (int i =1 ; i < temp.length -1 ; i++){
-            if (i -1 > 0 && i +1 < temp.length && temp[i-1] == '0' && temp[i+1] == '0'){
+            if (temp[i] == '0' && i -1 > 0 && i +1 < temp.length && temp[i-1] == '0' && temp[i+1] == '0'){
                 counter++;
                 temp[i] = '1';
             }
-
         }
 
-//        System.out.println(temp);
-//        System.out.println(counter);
+        System.out.println(temp);
+        System.out.println(counter);
         return counter;
     }
 }
