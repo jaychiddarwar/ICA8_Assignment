@@ -7,6 +7,8 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -27,8 +29,9 @@ public class urinalTest {
 
     @Test
     public void emptyFile(){
+        String filename = "urinal.dat";
         try{
-            BufferedReader br = new BufferedReader(new FileReader("urinal.dat"));
+            BufferedReader br = new BufferedReader(new FileReader(filename));
             assertNotNull(br.readLine());
         } catch (Exception e){
             System.err.println(e);
@@ -39,18 +42,18 @@ public class urinalTest {
         assertEquals(-1, new urinals().invalidCharacter("1012"));
     }
 
-    @Test
-    public void testFile() throws FileNotFoundException{
-//        FileNotFoundException exception ;
-//        try{
-//            new urinals().openFile();
-//        }catch (FileNotFoundException e){
-//            exception = e;
-//        }
-//        assertEquals(FileNotFoundException.class, exception);
-        FileNotFoundException thrown = assertThrows(FileNotFoundException.class, ()->new urinals().openFile(), "File not available");
-        Assertions.assertEquals("File not available", thrown.getMessage());
-    }
+//    @Test
+//    public void testFile() throws FileNotFoundException{
+////        FileNotFoundException exception ;
+////        try{
+////            new urinals().openFile();
+////        }catch (FileNotFoundException e){
+////            exception = e;
+////        }
+////        assertEquals(FileNotFoundException.class, exception);
+//        FileNotFoundException thrown = assertThrows(FileNotFoundException.class, ()->new urinals().openFile(), "File not available");
+//        Assertions.assertEquals("File not available", thrown.getMessage());
+//    }
 
     @Test
     public void testValidUrinals(){
@@ -77,16 +80,19 @@ public class urinalTest {
         assertEquals(ans, new urinals().createFileName());
     }
 
+    @Test
+    public void badFileName(){
+        List<String> arr = new ArrayList<>();
+        File file = new File("./");
+        String content[] = file.list();
+        for (String val :content){
+            if(val.length() > 4 && val.substring(0,4).equals("rule")){
+                arr.add(val);
+            }
+        }
+        assertEquals(1, arr.size());
+    }
 
 
 
-//    @Test
-//    public void testValidString(){
-//        assertEquals(1, new urinals().validString("10101"));
-//    }
-//
-//    @Test
-//    public void testFromKeyboard(){
-//        assertEquals(1, new urinals().validString("10101"));
-//    }
 }
