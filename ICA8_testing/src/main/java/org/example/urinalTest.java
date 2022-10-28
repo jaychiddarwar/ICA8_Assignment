@@ -25,7 +25,18 @@ public class urinalTest {
         assertTrue(file.exists());
     }
 
+    @Test
+    public void emptyFile(){
+        try{
+            BufferedReader br = new BufferedReader(new FileReader("urinal.dat"));
+            assertNotNull(br.readLine());
+        } catch (Exception e){
+            System.err.println(e);
+        }
+    }
+
     
+
 
 //    @Test
 //    public void testValidString(){
