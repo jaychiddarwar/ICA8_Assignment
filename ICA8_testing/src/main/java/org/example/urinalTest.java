@@ -52,6 +52,12 @@ public class urinalTest {
         Assertions.assertEquals("File not available", thrown.getMessage());
     }
 
+    @Test
+    public void testValidUrinals(){
+        assertEquals(-1, new urinals().validStringUrinals("11111"));
+    }
+
+
     
 
 
