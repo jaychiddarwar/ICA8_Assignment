@@ -1,13 +1,39 @@
 package org.example;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class urinalTest {
     @Test
-    public void sample(){
-        assertEquals(1, urinals.logic("10001"));
+    public void testCase1(){
+        assertEquals(1, new urinals().logic("10001"));
         System.out.println("=== Jay Chiddarwar == TEST TWO EXECUTED ====");
     }
+
+    @Test
+    public void fileDoesntExist(){
+        String filename = "urinal.dat";
+        File file = new File(filename);
+
+        assertTrue(file.exists());
+    }
+
+    
+
+//    @Test
+//    public void testValidString(){
+//        assertEquals(1, new urinals().validString("10101"));
+//    }
+//
+//    @Test
+//    public void testFromKeyboard(){
+//        assertEquals(1, new urinals().validString("10101"));
+//    }
 }
