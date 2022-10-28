@@ -15,6 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class urinalTest {
     @Test
     public void countUrinalTest(){
+        System.out.println("====== Jay Sachin Chiddarwar == countUrinalTest TEST ONE EXECUTED =======");
         assertEquals(1, new urinals().logic("10001"));
     }
 
@@ -23,6 +24,7 @@ public class urinalTest {
         String filename = "urinal.dat";
         File file = new File(filename);
 
+        System.out.println("====== Jay Sachin Chiddarwar == fileDoesntExist TEST TWO EXECUTED =======");
         assertTrue(file.exists());
     }
 
@@ -31,6 +33,7 @@ public class urinalTest {
         String filename = "urinal.dat";
         try{
             BufferedReader br = new BufferedReader(new FileReader(filename));
+            System.out.println("====== Jay Sachin Chiddarwar == emptyFile TEST THREE EXECUTED =======");
             assertNotNull(br.readLine());
         } catch (Exception e){
             System.err.println(e);
@@ -38,24 +41,14 @@ public class urinalTest {
     }
     @Test
     public void testInvalidString(){
+        System.out.println("====== Jay Sachin Chiddarwar == testInvalidString TEST FOUR EXECUTED =======");
         assertEquals(-1, new urinals().invalidCharacter("1012"));
     }
 
-//    @Test
-//    public void testFile() throws FileNotFoundException{
-////        FileNotFoundException exception ;
-////        try{
-////            new urinals().openFile();
-////        }catch (FileNotFoundException e){
-////            exception = e;
-////        }
-////        assertEquals(FileNotFoundException.class, exception);
-//        FileNotFoundException thrown = assertThrows(FileNotFoundException.class, ()->new urinals().openFile(), "File not available");
-//        Assertions.assertEquals("File not available", thrown.getMessage());
-//    }
 
     @Test
     public void testValidUrinals(){
+        System.out.println("====== Jay Sachin Chiddarwar == testValidUrinals TEST FIVE EXECUTED =======");
         assertEquals(-1, new urinals().validStringUrinals("11111"));
     }
 
@@ -76,6 +69,7 @@ public class urinalTest {
         if (ans.equals("")){
             ans = "0";
         }
+        System.out.println("====== Jay Sachin Chiddarwar == testCreateFileName TEST SIX EXECUTED =======");
         assertEquals(ans, new urinals().createFileName());
     }
 
@@ -91,6 +85,7 @@ public class urinalTest {
                 arr.add(val);
             }
         }
+        System.out.println("====== Jay Sachin Chiddarwar == badFileName TEST SEVEN EXECUTED =======");
         assertEquals(1, arr.size());
     }
 
@@ -105,6 +100,7 @@ public class urinalTest {
         String filename = "rule1.txt";
         try{
             BufferedReader br = new BufferedReader(new FileReader(filename));
+            System.out.println("====== Jay Sachin Chiddarwar == writeTestsComplete TEST EIGHT EXECUTED =======");
             assertNotNull(br.readLine());
         } catch (Exception e){
             System.err.println(e);
