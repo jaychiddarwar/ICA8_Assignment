@@ -58,7 +58,25 @@ public class urinalTest {
     }
 
 
-    
+    @Test
+    public void testCreateFileName(){
+        File file = new File("./");
+        String content[] = file.list();
+        String ans = "";
+        for (String val :content){
+            if(val.length() > 4 && val.substring(0,4).equals("rule")){
+                ans = val;
+                break;
+            }
+        }
+        ans = ans.substring(0, ans.length() - 4);
+        ans = ans.substring(4, ans.length());
+        if (ans.equals("")){
+            ans = "0";
+        }
+        assertEquals(ans, new urinals().createFileName());
+    }
+
 
 
 
