@@ -14,9 +14,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class urinalTest {
     @Test
-    public void testCase1(){
+    public void countUrinalTest(){
         assertEquals(1, new urinals().logic("10001"));
-        System.out.println("=== Jay Chiddarwar == TEST TWO EXECUTED ====");
     }
 
     @Test
@@ -102,8 +101,8 @@ public class urinalTest {
         arr.add("2");
         arr.add("-1");
         urinals urinals = new urinals();
-        urinals.outputToFile(arr, 10);
-        String filename = "rule11.txt";
+        urinals.outputToFile(arr, 0);
+        String filename = "rule1.txt";
         try{
             BufferedReader br = new BufferedReader(new FileReader(filename));
             assertNotNull(br.readLine());
