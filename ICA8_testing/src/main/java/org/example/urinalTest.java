@@ -80,6 +80,8 @@ public class urinalTest {
         assertEquals(ans, new urinals().createFileName());
     }
 
+
+
     @Test
     public void badFileName(){
         List<String> arr = new ArrayList<>();
@@ -91,6 +93,23 @@ public class urinalTest {
             }
         }
         assertEquals(1, arr.size());
+    }
+
+    @Test
+    public void writeTestsComplete(){
+        List<String> arr = new ArrayList<>();
+        arr.add("1");
+        arr.add("2");
+        arr.add("-1");
+        urinals urinals = new urinals();
+        urinals.outputToFile(arr, 10);
+        String filename = "rule11.txt";
+        try{
+            BufferedReader br = new BufferedReader(new FileReader(filename));
+            assertNotNull(br.readLine());
+        } catch (Exception e){
+            System.err.println(e);
+        }
     }
 
 
