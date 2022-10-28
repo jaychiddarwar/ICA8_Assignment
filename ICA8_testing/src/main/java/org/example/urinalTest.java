@@ -34,8 +34,12 @@ public class urinalTest {
             System.err.println(e);
         }
     }
+    @Test
+    public void testInvalidString(){
+        assertEquals(-1, new urinals().invalidCharacter("1012"));
+    }
 
-    
+
 
 
 //    @Test
