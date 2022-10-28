@@ -39,6 +39,20 @@ public class urinalTest {
         assertEquals(-1, new urinals().invalidCharacter("1012"));
     }
 
+    @Test
+    public void testFile() throws FileNotFoundException{
+//        FileNotFoundException exception ;
+//        try{
+//            new urinals().openFile();
+//        }catch (FileNotFoundException e){
+//            exception = e;
+//        }
+//        assertEquals(FileNotFoundException.class, exception);
+        FileNotFoundException thrown = assertThrows(FileNotFoundException.class, ()->new urinals().openFile(), "File not available");
+        Assertions.assertEquals("File not available", thrown.getMessage());
+    }
+
+    
 
 
 
