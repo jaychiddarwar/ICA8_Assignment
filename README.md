@@ -6,3 +6,5 @@ To run All test cases, run urinalTest.java using junit 5
 To run complete program run main function fron urinals.java
 
 Use same file location as present.
+
+Github repo : https://github.com/jaychiddarwar/ICA8_Assignment
